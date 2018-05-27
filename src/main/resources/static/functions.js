@@ -244,8 +244,12 @@ function connect() {
 }
 
 function addTweet(tweet) {
-    $("#resultsBlock").prepend(Mustache.render(tweet_template, JSON.parse(tweet.body)));
-    console.log("Tweet added")
+    jQuery.noConflict();
+        jQuery(function(){
+          var $ = jQuery;
+            $("#resultsBlock").prepend(Mustache.render(tweets_template, JSON.parse(tweet.body)));
+            console.log("Tweet added")
+     })
 }
 
 function registerSearchCountry() {
@@ -257,6 +261,9 @@ function registerSearchCountry() {
             event.preventDefault();
             if (country_code != null) {
                  console.log("country_code", country_code);
+
+                // ahora representa directamente desde el chooser
+
                  var target = $(this).attr('action');
                  $.get(target, {c: country_code} )
                     .done( function(data) {
@@ -287,6 +294,7 @@ function registerSearchGlobal() {
     jQuery.noConflict();
     jQuery(function(){
       var $ = jQuery;
+      console.log("entro a search global");
 
       //document.getElementById('button_global').addEventListener("click", globalFunction)
 
@@ -329,6 +337,17 @@ function registerSearchHashtag() {
 
             var target=$(this).attr('action');
             var query =$("#hash_button").val();
+            console.log("hashtag: ", query); // hacer el tweet mas pequeño para evitar problemas
+
+
+            console.log("query: ", query.substring(0,3));
+
+            if (query.substring(0,3) == "%23") {
+                query = query.substring(3,6);
+            }
+            else {
+                query = query.substring(0,2);
+            }
 
             if (subscription != null) {
                 $("#resultsBlock").empty();
@@ -341,18 +360,6 @@ function registerSearchHashtag() {
             subscription = client.subscribe('/queue/search/' + query, addTweet);
             console.log("Client subscribed");
 
-
-
-
-            /*$.get(target, {q: query} )
-                .done( function(data) {
-                    var template = $("#mustache_template").html();
-                      Mustache.parse(template);
-                      var rendered = Mustache.render(template, data);
-                      $('#resultsBlock').empty().html(rendered);
-                }).fail(function() {
-                $("#resultsBlock").empty();
-            });*/
 
         });
 
