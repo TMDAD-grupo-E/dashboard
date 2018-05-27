@@ -263,9 +263,9 @@ function registerSearchCountry() {
                  console.log("country_code", country_code);
 
                 // ahora representa directamente desde el chooser
-
+                 var host = "google.es/";
                  var target = $(this).attr('action');
-                 $.get(target, {c: country_code} )
+                 $.get("http:\/\/chooser-tmdad.westeurope.cloudapp.azure.com/trends", {c: country_code} )
                     .done( function(data) {
                        var template = $("#hashtags_template").html();
                         Mustache.parse(template);
