@@ -1,105 +1,65 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
-<html xmlns:th="http://www.thymeleaf.org"
- xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <title>Cliente MVC Twitter</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-     content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no"
-     id="Viewport" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" id="Viewport" name="viewport"
+    />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet"
-           href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-           th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}"
+    />
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet"
-          href="../static/my-style.css"
-          th:href="@{/my-style.css}"/>
+    <link rel="stylesheet" href="../static/my-style.css" th:href="@{/my-style.css}" />
 
-    <link rel="stylesheet" media="all" href="../static/jquery-jvectormap.css"
-            th:href="@{jquery-jvectormap.css}"/>
-    <script src="../static/assets/jquery-3.0.0.js"
-    th:src="@{/assets/jquery-3.0.0.js}"></script>
+    <link rel="stylesheet" media="all" href="../static/jquery-jvectormap.css" th:href="@{jquery-jvectormap.css}" />
+    <script src="../static/assets/jquery-3.0.0.js" th:src="@{/assets/jquery-3.0.0.js}"></script>
 
     <!--<script src="http://code.jquery.com/jquery-3.0.0.min.js"
             th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>-->
 
-    <script src="../static/jquery-jvectormap.js"
-            th:src="@{/jquery-jvectormap.js}"></script>
-    <script src="../static/lib/jquery-mousewheel.js"
-    th:src="@{/lib/jquery-mousewheel.js}"></script>
+    <script src="../static/jquery-jvectormap.js" th:src="@{/jquery-jvectormap.js}"></script>
+    <script src="../static/lib/jquery-mousewheel.js" th:src="@{/lib/jquery-mousewheel.js}"></script>
 
-    <script src="../static/src/jvectormap.js"
-    th:src="@{/src/jvectormap.js}"></script>
+    <script src="../static/src/jvectormap.js" th:src="@{/src/jvectormap.js}"></script>
 
-    <script src="../static/src/abstract-element.js"
-    th:src="@{/src/abstract-element.js}"></script>
-    <script src="../static/src/abstract-canvas-element.js"
-    th:src="@{/src/abstract-canvas-element.js}"></script>
-    <script src="../static/src/abstract-shape-element.js"
-    th:src="@{/src/abstract-shape-element.js}"></script>
+    <script src="../static/src/abstract-element.js" th:src="@{/src/abstract-element.js}"></script>
+    <script src="../static/src/abstract-canvas-element.js" th:src="@{/src/abstract-canvas-element.js}"></script>
+    <script src="../static/src/abstract-shape-element.js" th:src="@{/src/abstract-shape-element.js}"></script>
 
-    <script src="../static/src/svg-element.js"
-    th:src="@{/src/svg-element.js}"></script>
-    <script src="../static/src/svg-group-element.js"
-    th:src="@{/src/svg-group-element.js}"></script>
-    <script src="../static/src/svg-canvas-element.js"
-    th:src="@{/src/svg-canvas-element.js}"></script>
-    <script src="../static/src/svg-shape-element.js"
-            th:src="@{/src/svg-shape-element.js}"></script>
-    <script src="../static/src/svg-path-element.js"
-    th:src="@{/src/svg-path-element.js}"></script>
-    <script src="../static/src/svg-circle-element.js"
-    th:src="@{/src/svg-circle-element.js}"></script>
-    <script src="../static/src/svg-image-element.js"
-    th:src="@{/src/svg-image-element.js}"></script>
-    <script src="../static/src/svg-text-element.js"
-    th:src="@{/src/svg-text-element.js}"></script>
+    <script src="../static/src/svg-element.js" th:src="@{/src/svg-element.js}"></script>
+    <script src="../static/src/svg-group-element.js" th:src="@{/src/svg-group-element.js}"></script>
+    <script src="../static/src/svg-canvas-element.js" th:src="@{/src/svg-canvas-element.js}"></script>
+    <script src="../static/src/svg-shape-element.js" th:src="@{/src/svg-shape-element.js}"></script>
+    <script src="../static/src/svg-path-element.js" th:src="@{/src/svg-path-element.js}"></script>
+    <script src="../static/src/svg-circle-element.js" th:src="@{/src/svg-circle-element.js}"></script>
+    <script src="../static/src/svg-image-element.js" th:src="@{/src/svg-image-element.js}"></script>
+    <script src="../static/src/svg-text-element.js" th:src="@{/src/svg-text-element.js}"></script>
 
-    <script src="../static/src/vml-element.js"
-    th:src="@{/src/vml-element.js}"></script>
-    <script src="../static/src/vml-group-element.js"
-    th:src="@{/src/vml-group-element.js}"></script>
-    <script src="../static/src/vml-canvas-element.js"
-    th:src="@{/src/vml-canvas-element.js}"></script>
-    <script src="../static/src/vml-shape-element.js"
-    th:src="@{/src/vml-shape-element.js}"></script>
-    <script src="../static/src/vml-path-element.js"
-    th:src="@{/src/vml-path-element.js}"></script>
-    <script src="../static/src/vml-circle-element.js"
-    th:src="@{/src/vml-circle-element.js}"></script>
-    <script src="../static/src/vml-image-element.js"
-    th:src="@{/src/vml-image-element.js}"></script>
+    <script src="../static/src/vml-element.js" th:src="@{/src/vml-element.js}"></script>
+    <script src="../static/src/vml-group-element.js" th:src="@{/src/vml-group-element.js}"></script>
+    <script src="../static/src/vml-canvas-element.js" th:src="@{/src/vml-canvas-element.js}"></script>
+    <script src="../static/src/vml-shape-element.js" th:src="@{/src/vml-shape-element.js}"></script>
+    <script src="../static/src/vml-path-element.js" th:src="@{/src/vml-path-element.js}"></script>
+    <script src="../static/src/vml-circle-element.js" th:src="@{/src/vml-circle-element.js}"></script>
+    <script src="../static/src/vml-image-element.js" th:src="@{/src/vml-image-element.js}"></script>
 
-    <script src="../static/src/map-object.js"
-    th:src="@{/src/map-object.js}"></script>
-    <script src="../static/src/region.js"
-    th:src="@{/src/region.js}"></script>
-    <script src="../static/src/marker.js"
-    th:src="@{/src/marker.js}"></script>
+    <script src="../static/src/map-object.js" th:src="@{/src/map-object.js}"></script>
+    <script src="../static/src/region.js" th:src="@{/src/region.js}"></script>
+    <script src="../static/src/marker.js" th:src="@{/src/marker.js}"></script>
 
-    <script src="../static/src/vector-canvas.js"
-    th:src="@{/src/vector-canvas.js}"></script>
-    <script src="../static/src/simple-scale.js"
-    th:src="@{/src/simple-scale.js}"></script>
-    <script src="../static/src/ordinal-scale.js"
-    th:src="@{/src/ordinal-scale.js}"></script>
-    <script src="../static/src/numeric-scale.js"
-    th:src="@{/src/numeric-scale.js}"></script>
-    <script src="../static/src/color-scale.js"
-    th:src="@{/src/color-scale.js}"></script>
-    <script src="../static/src/legend.js"
-    th:src="@{/src/legend.js}"></script>
-    <script src="../static/src/data-series.js"
-    th:src="@{/src/data-series.js}"></script>
-    <script src="../static/src/proj.js"
-    th:src="@{/src/proj.js}"></script>
-    <script src="../static/src/map.js"
-    th:src="@{/src/map.js}"></script>
+    <script src="../static/src/vector-canvas.js" th:src="@{/src/vector-canvas.js}"></script>
+    <script src="../static/src/simple-scale.js" th:src="@{/src/simple-scale.js}"></script>
+    <script src="../static/src/ordinal-scale.js" th:src="@{/src/ordinal-scale.js}"></script>
+    <script src="../static/src/numeric-scale.js" th:src="@{/src/numeric-scale.js}"></script>
+    <script src="../static/src/color-scale.js" th:src="@{/src/color-scale.js}"></script>
+    <script src="../static/src/legend.js" th:src="@{/src/legend.js}"></script>
+    <script src="../static/src/data-series.js" th:src="@{/src/data-series.js}"></script>
+    <script src="../static/src/proj.js" th:src="@{/src/proj.js}"></script>
+    <script src="../static/src/map.js" th:src="@{/src/map.js}"></script>
 
-    <script src="../static/assets/jquery-jvectormap-world-mill-en.js"
-    th:src="@{/assets/jquery-jvectormap-world-mill-en.js}"></script>
+    <script src="../static/assets/jquery-jvectormap-world-mill-en.js" th:src="@{/assets/jquery-jvectormap-world-mill-en.js}"></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script id="mustache_template" type="x-tmpl-mustache">
@@ -124,31 +84,36 @@
             <form id="search_hashtag" action="search" method="get">
                     <button class="btn btn-link" id="hash_button" name="q" type="submit" style="color: black" value="{{query}}"><span class="fas fa-hashtag"></span>{{name}}</button>
             </form>
-
         {{/trends}}
     </script>
 
+    
 
 
 </head>
+
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">Twitter Trendings</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarsDefault">
             <ul class="navbar-nav mr-auto">
                 <form id="global_trendings" method="get" action="trends">
-                   <!-- <a class="btn" id="button_global" role="button" target="_blank"  action="trends" style="color: white">Global Trending Topics</a> -->
+                    <!-- <a class="btn" id="button_global" role="button" target="_blank"  action="trends" style="color: white">Global Trending Topics</a> -->
                     <a class="btn" id="button_global" name="country" value="all" type="button submit" target="_blank" style="color: white">Global Trending Topics</a>
 
+                </form>
+                <form action="configuration.html">
+                    <input type="submit" value="Configuration">
                 </form>
             </ul>
 
 
             <form class="form-inline my-2 my-lg-0" id="search" action="trends" method="get">
-                <input class="form-control mr-sm-2" type="button" id="country" value="Select a country"/>
+                <input class="form-control mr-sm-2" type="button" id="country" value="Select a country" />
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -156,7 +121,7 @@
     </nav>
 
 
-    <div id="map" class="map" style="display: none; width: 100%; height: 400px" ></div>
+    <div id="map" class="map" style="display: none; width: 100%; height: 400px"></div>
 
 
 
@@ -173,31 +138,26 @@
 
 
 
-     <script
-             src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-             th:src="@{/webjars/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
 
-     <script
-             src="https://cdn.jsdelivr.net/npm/mustache@2.3.0/mustache.min.js"
-             th:src="@{/webjars/mustache/2.3.0/mustache.min.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mustache@2.3.0/mustache.min.js" th:src="@{/webjars/mustache/2.3.0/mustache.min.js}"></script>
 
 
-     <script defer="" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
-             th:src="@{/webjars/font-awesome/5.0.6/svg-with-js/js/fontawesome-all.js}"></script>
+    <script defer="" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js" th:src="@{/webjars/font-awesome/5.0.6/svg-with-js/js/fontawesome-all.js}"></script>
 
 
-     <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
 
-     <!--<script
+    <!--<script
              src="http://cdn.jsdelivr.net/webjars/sockjs-client/0.3.4-1/sockjs.js"
              th:src="@{/webjars/sockjs-client/0.3.4-1/sockjs.js}"></script>
      <script
              src="http://cdn.jsdelivr.net/webjars/stomp-websocket/2.3.1-1/stomp.js"
              th:src="@{/webjars/stomp-websocket/2.3.1-1/stomp.js}"></script>-->
-     <script th:src="@{/functions.js}"
-             src="../static/functions.js"></script>
+    <script th:src="@{/functions.js}" src="../static/functions.js"></script>
 
 </body>
+
 </html>
